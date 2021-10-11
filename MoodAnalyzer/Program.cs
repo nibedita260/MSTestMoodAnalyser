@@ -2,27 +2,10 @@
 
 namespace MoodAnalyzer
 {
-    class Program
+    public class Program
     {
         public const string HAPPY_MOOD = "Happy";
         public const string SAD_MOOD = "Sad";
-        class MoodAnalyser
-        {
-            public void MoodAnalyze(string mood)
-            {
-                if (mood.Contains(HAPPY_MOOD))
-                {
-                    Console.WriteLine("I am in Happy mood");
-
-                    return;
-                }
-                if (mood.Contains(SAD_MOOD))
-                {
-                    Console.WriteLine("I am in Sad mood");
-                    return;
-                }
-            }
-        }
         static void Main(string[] args)
         {
             bool isExit = false;
