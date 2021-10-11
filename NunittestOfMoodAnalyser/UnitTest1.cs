@@ -15,13 +15,5 @@ namespace NunittestOfMoodAnalyser
             string ExpectedResult= "Happy";
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
-        [Test]
-        public void AnalyseForSadMood()
-        {
-            MoodAnalyser mood = new MoodAnalyser(SAD_MOOD);
-            string ActualResult = mood.MoodAnalyze();
-            string ExpectedResult = "Sad";
-            Assert.AreEqual(ExpectedResult, ActualResult);
-        }
     }
 }
