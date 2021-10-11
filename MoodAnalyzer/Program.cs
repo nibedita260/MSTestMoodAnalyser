@@ -17,8 +17,8 @@ namespace MoodAnalyzer
                 switch (options)
                 {
                     case 1:
-                        MoodAnalyser moodAnalyser = new MoodAnalyser();
-                        moodAnalyser.MoodAnalyze(SAD_MOOD);
+                        MoodAnalyser moodAnalyser = new MoodAnalyser(HAPPY_MOOD);
+                        moodAnalyser.MoodAnalyze();
                         break;
                     default:
                         Console.WriteLine("choose valid options");

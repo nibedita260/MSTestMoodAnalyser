@@ -8,8 +8,11 @@ namespace MoodAnalyzer
     {
         public const string HAPPY_MOOD = "Happy";
         public const string SAD_MOOD = "Sad";
-        bool mood;
-        public string MoodAnalyze(string mood)
+        public string mood;
+        public MoodAnalyser(string mood){
+            this.mood = mood;
+        }
+        public string MoodAnalyze()
         {
             if (mood==HAPPY_MOOD)
             {
