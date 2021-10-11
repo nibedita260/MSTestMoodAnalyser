@@ -10,16 +10,16 @@ namespace NunittestOfMoodAnalyser
         [Test]
         public void AnalyseMood()
         {
-            MoodAnalyser mood = new MoodAnalyser();
-            string ActualResult = mood.MoodAnalyze(HAPPY_MOOD);
+            MoodAnalyser mood = new MoodAnalyser(HAPPY_MOOD);
+            string ActualResult = mood.MoodAnalyze();
             string ExpectedResult= "Happy";
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
         [Test]
         public void AnalyseForSadMood()
         {
-            MoodAnalyser mood = new MoodAnalyser();
-            string ActualResult = mood.MoodAnalyze(SAD_MOOD);
+            MoodAnalyser mood = new MoodAnalyser(SAD_MOOD);
+            string ActualResult = mood.MoodAnalyze();
             string ExpectedResult = "Sad";
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
