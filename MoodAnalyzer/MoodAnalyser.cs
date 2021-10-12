@@ -6,34 +6,38 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyser
     {
-        public const string HAPPY_MOOD = "I am in Happy Mood";
-        public const string SAD_MOOD = "I am in Sad Mood";
+        const string HAPPY_MOOD = "Happy";
+        const string SAD_MOOD = "Sad";
+        const string NULL = "Mood Can't be Null";
         public string mood;
-        public MoodAnalyser(string mood){
+        public MoodAnalyser(string mood)
+        {
             this.mood = mood;
         }
         public string MoodAnalyze()
         {
             try//this block will test for exception
             {
-                if(this.mood.ToLower().Contains("happy"))
+                if (this.mood.ToLower().Contains("happy"))
                 {
-                    Console.WriteLine("I am in happy mood");
-                    return "Happy";
+                    Console.WriteLine(HAPPY_MOOD);
+                    return HAPPY_MOOD;
                 }
                 if (this.mood.ToLower().Contains("sad"))
                 {
-                    Console.WriteLine("I am in sad mood");
-                    return "Sad";
+                    Console.WriteLine(SAD_MOOD);
+                    return SAD_MOOD;
                 }
                 else
                 {
-                    return "Happy";
+                    Console.WriteLine(NULL);
+                    return NULL;
                 }
             }
-            catch(NullReferenceException e)//this block will catch the exception if there
+            catch (NullReferenceException)//this block will catch the exception if there
             {
-                return e.Message;
+                Console.WriteLine(NULL);
+                return NULL;
             }
         }
     }
