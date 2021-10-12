@@ -5,21 +5,23 @@ namespace NunittestOfMoodAnalyser
 {
     public class Tests
     {
-        public const string HAPPY_MOOD = "Happy";
-        public const string SAD_MOOD = "Sad";
         [Test]
-        public void AnalyseMood()
-        {
-            MoodAnalyser mood = new MoodAnalyser();
-            string ActualResult = mood.MoodAnalyze(HAPPY_MOOD);
-            string ExpectedResult= "Happy";
+        //Test Case-1.1
+        public void Analyse_Happy_Mood()
+        {   
+            string mood = "I am in Happy Mood ";
+            MoodAnalyser moodAnalyse = new MoodAnalyser();
+            string ActualResult = moodAnalyse.MoodAnalyze(mood);
+            string ExpectedResult = "Happy";
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
         [Test]
-        public void AnalyseForSadMood()
+        //Test Case-1.2
+        public void Analyse_Sad_Mood()
         {
-            MoodAnalyser mood = new MoodAnalyser();
-            string ActualResult = mood.MoodAnalyze(SAD_MOOD);
+            string mood = "I am in Sad Mood ";
+            MoodAnalyser moodAnalyse = new MoodAnalyser();
+            string ActualResult = moodAnalyse.MoodAnalyze(mood);
             string ExpectedResult = "Sad";
             Assert.AreEqual(ExpectedResult, ActualResult);
         }
