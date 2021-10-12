@@ -4,8 +4,8 @@ namespace MoodAnalyzer
 {
     public class Program
     {
-        public const string HAPPY_MOOD = "Happy";
-        public const string SAD_MOOD = "Sad";
+        const string HAPPY_MOOD = "I am in Happy mood";
+        const string SAD_MOOD = "I am in Sad mood";
         static void Main(string[] args)
         {
             bool isExit = false;
