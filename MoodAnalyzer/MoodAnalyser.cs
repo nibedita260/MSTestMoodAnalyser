@@ -7,8 +7,9 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyser
     {
-        public const string HAPPY_MOOD = "I am in Happy Mood";
-        public const string SAD_MOOD = "I am in Sad Mood";
+        const string HAPPY_MOOD = "Happy";
+        const string SAD_MOOD = "Sad";
+        const string NULL = "Mood can't be Null";
         public string mood;
         public MoodAnalyser(string mood)
         {
@@ -22,23 +23,23 @@ namespace MoodAnalyzer
                     throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not Empty");
                 if (this.mood.ToLower().Contains("happy"))
                 {
-                    Console.WriteLine("I am in happy mood");
-                    return "Happy";
+                    Console.WriteLine(HAPPY_MOOD);
+                    return HAPPY_MOOD;
                 }
                 if (this.mood.ToLower().Contains("sad"))
                 {
-                    Console.WriteLine("I am in sad mood");
-                    return "Sad";
+                    Console.WriteLine(SAD_MOOD);
+                    return SAD_MOOD;
                 }
                 else
                 {
-                    Console.WriteLine("Happy");
-                    return "Happy";
+                    Console.WriteLine(NULL);
+                    return NULL;
                 }
             }
             catch (NullReferenceException e)//this block will catch the exception if there
             {
-                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood should not null");
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, NULL);
             }
             catch (MoodAnalyserCustomException ex)
             {

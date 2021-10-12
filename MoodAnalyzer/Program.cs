@@ -12,21 +12,25 @@ namespace MoodAnalyzer
             int options;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.CreateAndRespondMoodAnalyser 2.CustomExceptionHandlingInMoodAnalyser");
+                Console.WriteLine("choose 1.HappyMoodAnalyser 2.HappyMoodAnalyser 3.NullMoodAnalyser 4.CustomExceptionMoodAnalyze");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
                     case 1:
-                        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in Any Mood");
+                        MoodAnalyser moodAnalyser = new MoodAnalyser(HAPPY_MOOD);
                         moodAnalyser.MoodAnalyze();
                         break;
                     case 2:
-                        MoodAnalyser analyseForNullMood = new MoodAnalyser(null);
-                        analyseForNullMood.MoodAnalyze();
+                        MoodAnalyser moodAnalyse = new MoodAnalyser(SAD_MOOD);
+                        moodAnalyse.MoodAnalyze();
                         break;
                     case 3:
-                        MoodAnalyser analyseMood = new MoodAnalyser("");
-                        analyseMood.MoodAnalyze();
+                        MoodAnalyser moodAnalyze = new MoodAnalyser("null");//null
+                        moodAnalyze.MoodAnalyze();
+                        break;
+                    case 4:
+                        MoodAnalyser analyser = new MoodAnalyser("");//empty
+                        analyser.MoodAnalyze();
                         break;
                     default:
                         Console.WriteLine("choose valid options");
