@@ -4,8 +4,6 @@ namespace MoodAnalyzer
 {
     public class Program
     {
-        public const string HAPPY_MOOD = "Happy";
-        public const string SAD_MOOD = "Sad";
         static void Main(string[] args)
         {
             bool isExit = false;
@@ -18,7 +16,7 @@ namespace MoodAnalyzer
                 {
                     case 1:
                         MoodAnalyser moodAnalyser = new MoodAnalyser();
-                        moodAnalyser.MoodAnalyze(HAPPY_MOOD);
+                        moodAnalyser.MoodAnalyze("I am in Happy Mood");
                         break;
                     default:
                         Console.WriteLine("choose valid options");
