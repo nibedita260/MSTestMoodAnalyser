@@ -16,7 +16,7 @@ namespace MoodAnalyzer
                 {
                     case 1:
                         MoodAnalyser moodAnalyser = new MoodAnalyser();
-                        moodAnalyser.MoodAnalyze("I am in Sad Mood");
+                        moodAnalyser.MoodAnalyze("I am in Any Mood");
                         break;
                     default:
                         Console.WriteLine("choose valid options");

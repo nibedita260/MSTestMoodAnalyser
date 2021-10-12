@@ -22,7 +22,7 @@ namespace MoodAnalyzer
             }
             else
             {
-                return null;
+                return HAPPY_MOOD;
             }
         }
     }
