@@ -12,7 +12,7 @@ namespace MoodAnalyzer
             int options;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.HappyMoodAnalyser 2.HappyMoodAnalyser 3.NullMoodAnalyser");
+                Console.WriteLine("choose 1.HappyMoodAnalyser 2.SadMoodAnalyser 3.NullMoodAnalyser");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
