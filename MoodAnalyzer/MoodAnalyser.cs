@@ -33,13 +33,14 @@ namespace MoodAnalyzer
                 }
                 else
                 {
-                    Console.WriteLine(NULL);
-                    return NULL;
+                    Console.WriteLine(HAPPY_MOOD);
+                    return HAPPY_MOOD;
                 }
             }
-            catch (NullReferenceException e)//this block will catch the exception if there
+            catch (NullReferenceException)//this block will catch exception if there
             {
-                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, NULL);
+                Console.WriteLine(NULL);
+                return NULL;
             }
             catch (MoodAnalyserCustomException ex)
             {

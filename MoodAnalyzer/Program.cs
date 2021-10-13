@@ -25,7 +25,7 @@ namespace MoodAnalyzer
                         moodAnalyse.MoodAnalyze();
                         break;
                     case 3:
-                        MoodAnalyser moodAnalyze = new MoodAnalyser("null");//null
+                        MoodAnalyser moodAnalyze = new MoodAnalyser(null);//null
                         moodAnalyze.MoodAnalyze();
                         break;
                     case 4:
