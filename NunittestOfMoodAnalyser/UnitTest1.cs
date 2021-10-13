@@ -59,5 +59,49 @@ namespace NunittestOfMoodAnalyser
                 Assert.AreEqual(EmptyMsg, ex.Message);
             }
         }
+        [Test]//TestCase-5 
+        public void GivenMoodAnalyserClassName_WhenAnalyse_ShouldReturnObject()
+        {
+            //Arrange
+            object expected = new MoodAnalyser();
+            //Act
+            object resultobj = MoodAnalyzerFactory.createMoodAnalyse("MoodAnalyzer.MoodAnalyser", "MoodAnalyser");
+            //Assert
+            expected.Equals(resultobj);
+        }
+        [Test]//TestCase-5 .1
+        public void GivenMoodAnalyserWrongClassName_WhenAnalyse_ShouldReturnObject()
+        {
+            try
+            {
+                //Arrange
+                string className = "WrongNamespace.MoodAnalyse";
+                string constructor = "MoodAnalyse";
+                //Act
+                object resultobj = MoodAnalyzerFactory.createMoodAnalyse(className, constructor);
+            }
+            catch (MoodAnalyserCustomException ex)
+            {
+                //Assert
+                Assert.AreEqual("Class Not Found", ex.Message);
+            }
+        }
+        [Test]//TestCase-5 .2
+        public void GivenMoodAnalyserWrongConstructorName_WhenAnalyse_ShouldReturnObject()
+        {
+            try
+            {
+                //Arrange
+                string className = "MoodAnalyzer.MoodAnalyser";
+                string constructor = "WrongConstructor";
+                //Act
+                object resultobj = MoodAnalyzerFactory.createMoodAnalyse(className, constructor);
+            }
+            catch (MoodAnalyserCustomException ex)
+            {
+                //Assert
+                Assert.AreEqual("Constructor Not Found", ex.Message);
+            }
+        }
     }
 }
