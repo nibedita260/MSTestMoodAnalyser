@@ -20,11 +20,8 @@ namespace MoodAnalyzer
             try//this block will test for exception
             {
                 if (this.mood.Equals(string.Empty))
-                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not Empty");
-                if (this.mood.ToLower().Contains("happy"))
                 {
-                    Console.WriteLine(HAPPY_MOOD);
-                    return HAPPY_MOOD;
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "Mood should not Empty");
                 }
                 if (this.mood.ToLower().Contains("sad"))
                 {
@@ -39,8 +36,9 @@ namespace MoodAnalyzer
             }
             catch (NullReferenceException)//this block will catch exception if there
             {
-                Console.WriteLine(NULL);
-                return NULL;
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood can't be Null");
+                //Console.WriteLine(NULL);
+                //return NULL;
             }
             catch (MoodAnalyserCustomException ex)
             {
