@@ -11,6 +11,9 @@ namespace MoodAnalyzer
         const string SAD_MOOD = "Sad";
         const string NULL = "Mood can't be Null";
         public string mood;
+        public MoodAnalyser()
+        {
+        }
         public MoodAnalyser(string mood)
         {
             this.mood = mood;
