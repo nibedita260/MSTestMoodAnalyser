@@ -31,7 +31,7 @@ namespace NunittestOfMoodAnalyser
         //Test Case 3
         public void Analyse_Null_Mood()
         {
-            MoodAnalyser mood = new MoodAnalyser("null");//null mood
+            MoodAnalyser mood = new MoodAnalyser(null);//null mood
             string ActualResult = mood.MoodAnalyze();
             string ExpectedResult = NULLMsg;
             Assert.AreEqual(ExpectedResult, ActualResult); 
