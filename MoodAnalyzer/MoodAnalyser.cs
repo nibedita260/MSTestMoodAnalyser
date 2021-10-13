@@ -36,14 +36,9 @@ namespace MoodAnalyzer
             }
             catch (NullReferenceException)//this block will catch exception if there
             {
-<<<<<<< HEAD
-                Console.WriteLine(NULL);
-                return NULL;
-=======
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood can't be Null");
                 //Console.WriteLine(NULL);
                 //return NULL;
->>>>>>> UC4-CustomExceptionMoodAnalyser
             }
             catch (MoodAnalyserCustomException ex)
             {
