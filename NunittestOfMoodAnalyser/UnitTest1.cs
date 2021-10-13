@@ -31,7 +31,7 @@ namespace NunittestOfMoodAnalyser
         //Test Case 3
         public void Analyse_Null_Mood()
         {
-            MoodAnalyser mood = new MoodAnalyser("null");//null mood
+            MoodAnalyser mood = new MoodAnalyser(null);//null mood
             string ActualResult = mood.MoodAnalyze();
             string ExpectedResult = NULLMsg;
             Assert.AreEqual(ExpectedResult, ActualResult); 
@@ -56,7 +56,21 @@ namespace NunittestOfMoodAnalyser
             }
             catch (MoodAnalyserCustomException ex)
             {
-                Assert.AreEqual(EmptyMsg, ex.Message);
+                Assert.AreEqual(EmptyMsg, ex.Message);//empty mood exception handling
+            }
+        }
+        [Test]
+        //Test Case 4.2
+        public void Analyse_Given_Null_Mood_custom_throw_Exception()
+        {
+            try
+            {
+                MoodAnalyser mood = new MoodAnalyser(null);//null mood
+                string ActualResult = mood.MoodAnalyze();
+            }
+            catch (MoodAnalyserCustomException ex)
+            {
+                Assert.AreEqual(NULLMsg, ex.Message);//null mood exception handling
             }
         }
     }
