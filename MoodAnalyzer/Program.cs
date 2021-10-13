@@ -12,7 +12,7 @@ namespace MoodAnalyzer
             int options;
             while (!isExit)
             {
-                Console.WriteLine("choose 1.HappyMoodAnalyser 2.SadMoodAnalyser 3.NullMoodAnalyser 4.CustomExceptionMoodAnalyze 5.ReflectionMoodAnalyse");
+                Console.WriteLine("choose 1.HappyMoodAnalyser 2.SadMoodAnalyser 3.NullMoodAnalyser 4.CustomExceptionMoodAnalyze 5.ReflectionMoodAnalyse 6.MoodAnalyzeReflectionUsingParameterizedConstructor");
                 options = Convert.ToInt32(Console.ReadLine());
                 switch (options)
                 {
@@ -35,6 +35,10 @@ namespace MoodAnalyzer
                     case 5:
                         MoodAnalyzerFactory moodAnalyzerReflection = new MoodAnalyzerFactory();
                         moodAnalyzerReflection.ToString();
+                        break;
+                    case 6:
+                        MoodAnalyzerFactory moodAnalyzerReflectionParameterizedConst = new MoodAnalyzerFactory();
+                        moodAnalyzerReflectionParameterizedConst.ToString();
                         break;
                     default:
                         Console.WriteLine("choose valid options");
