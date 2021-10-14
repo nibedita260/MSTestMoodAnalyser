@@ -117,7 +117,7 @@ namespace NunittestOfMoodAnalyser
                 Assert.AreEqual("Constructor Not Found", ex.Message);
             }
         }
-        //TestCase-5.3
+        //TestCase-6.1
         [Test]
         public void Given_MoodAnalyser_Class_Name_Should_Return_MoodAnalyser_Object_Using_Parametrized_Constructor()
         {
@@ -130,7 +130,7 @@ namespace NunittestOfMoodAnalyser
             //Assert
             expectedObj.Equals(resultObj);
         }
-        //TestCase-5.4
+        //TestCase-6.2
         [Test]
         public void Given_Wrong_Class_Name_Should_Throw_MoodAnalysisException_For_Parameterized_Constructor()
         {
@@ -149,7 +149,7 @@ namespace NunittestOfMoodAnalyser
                 Assert.AreEqual("Class Not Found", e.Message);
             }
         }
-        //TC 5.5:-Pass Wrong Constructor parameter, cactch the Exception and throw indicating No such method Error
+        //TC 6.3:-Pass Wrong Constructor parameter, cactch the Exception and throw indicating No such method Error
         [Test]
         public void Given_Improper_Constructor_Name_Should_Throw_MoodAnalysisException_For_Parameterized_Constructor()
         {
