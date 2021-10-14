@@ -126,7 +126,7 @@ namespace NunittestOfMoodAnalyser
             string constructor = "MoodAnalyser";
             MoodAnalyser expectedObj = new MoodAnalyser("HAPPY");
             //Act
-            object resultObj = MoodAnalyzerFactory.CreateMoodAnalyserObjectUsingParametzisedConstructor(className, constructor);
+            object resultObj = MoodAnalyzerFactory.CreateMoodAnalyserObjectUsingParametzisedConstructor(className, constructor,"HAPPY");
             //Assert
             expectedObj.Equals(resultObj);
         }
@@ -141,7 +141,7 @@ namespace NunittestOfMoodAnalyser
                 string constructorName = "MoodAnalyser";
                 MoodAnalyser expectedObj = new MoodAnalyser("HAPPY");
                 //Act
-                object resultObj = MoodAnalyzerFactory.CreateMoodAnalyserObjectUsingParametzisedConstructor(className, constructorName);
+                object resultObj = MoodAnalyzerFactory.CreateMoodAnalyserObjectUsingParametzisedConstructor(className, constructorName, "HAPPY");
             }
             catch (MoodAnalyserCustomException e)
             {
@@ -160,7 +160,7 @@ namespace NunittestOfMoodAnalyser
                 string constructorName = "WrongConstructorName";
                 MoodAnalyser expectedObj = new MoodAnalyser("HAPPY");
                 //Act
-                object resultObj = MoodAnalyzerFactory.CreateMoodAnalyserObjectUsingParametzisedConstructor(className, constructorName);
+                object resultObj = MoodAnalyzerFactory.CreateMoodAnalyserObjectUsingParametzisedConstructor(className, constructorName, "HAPPY");
             }
             catch (MoodAnalyserCustomException e)
             {
