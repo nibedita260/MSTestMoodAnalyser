@@ -196,5 +196,49 @@ namespace NunittestOfMoodAnalyser
                 Assert.AreEqual("Constructor is not Found", e.Message);
             }
         }
+        //TC 8.1:-Given Happy Message,Should Return Happy
+        [Test]
+        public void Given_HappyMessage_WithReflector__ShouldReturn_Happy()
+        {
+            //Arrange
+            //Act
+            string result = MoodAnalyzerFactory.SetField("Happy", "mood");
+            //Assert
+            Assert.AreEqual("Happy", result);
+        }
+        //TC 8.2:-Pass Wrong Field Name, catch the Exception and throw indicating No such Field Error
+        [Test]
+        public void Given_Improper_Field_Name_Should_Throw_MoodAnalysisException_WithReflector()
+        {
+            try
+            {
+                //Arrange
+                string message = "Happy";
+                //Act
+                string mood = MoodAnalyzerFactory.SetField(message, "mood");
+            }
+            catch (MoodAnalyserCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Field is Not Found", e.Message);
+            }
+        }
+        //TC 8.3:-Pass Field Value As Null, catch the Exception and throw indicating Message Should Not NUll Error
+        [Test]
+        public void Given_Null_Field_Value_Should_Throw_MoodAnalysisException_WithReflector()
+        {
+            try
+            {
+                //Arrange
+                string message = null;
+                //Act
+                string mood = MoodAnalyzerFactory.SetField(message, "mood");
+            }
+            catch (MoodAnalyserCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Message should not be null", e.Message);
+            }
+        }
     }
 }
