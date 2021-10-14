@@ -168,6 +168,33 @@ namespace NunittestOfMoodAnalyser
                 Assert.AreEqual("Constructor is not Found", e.Message);
             }
         }
-
+        //TC 7.1:-Given Happy Message,Should Return Happy
+        [Test]
+        public void Given_HappyMood_ShouldReturn_Happy()
+        {
+            //Arrange
+            string expected = "Happy";
+            //Act
+            string mood = MoodAnalyzerFactory.InvokeAnalyseMood("Happy", "MoodAnalyze");
+            //Assert
+            Assert.AreEqual(expected, mood);
+        }
+        //TC 7.2:-Pass Wrong Method Name, catch the Exception and throw indicating No such method Error
+        [Test]
+        public void Given_Improper_Method_Name_Should_Throw_MoodAnalysisException_For_InvokeMoodAnalyse()
+        {
+            try
+            {
+                //Arrange
+                string message = "HAPPY";
+                //Act
+                string mood = MoodAnalyzerFactory.InvokeAnalyseMood(message, "MoodAnalyze");
+            }
+            catch (MoodAnalyserCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Constructor is not Found", e.Message);
+            }
+        }
     }
 }
